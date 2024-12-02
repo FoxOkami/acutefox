@@ -7,30 +7,34 @@ function App() {
   useEffect(() => {
     let prevY;
     const handleWheel = (event) => {
+      event.preventDefault();
       setAlphaValue(prev => Math.max(0, Math.min(1, prev + (1 / 100) * Math.sign(event.deltaY))));
     };
     const handleTouchStart = (event) => {
+      event.preventDefault();
       prevY = event.touches[0].clientY;
     };
     const handleTouchEnd = (event) => {
+      event.preventDefault();
       prevY = undefined;
     }
     const handleTouchMove = (event) => {
+      event.preventDefault();
       const currentY = event.touches[0].clientY;
       const deltaY = prevY - currentY;
 
       if (Math.abs(deltaY) > 1 && deltaY > 0) {
-        setAlphaValue(prev => Math.max(0, Math.min(1, prev + 0.1)));
+        setAlphaValue(prev => Math.max(0, Math.min(1, prev + 0.05)));
       }
       else if (deltaY < 0) {
-        setAlphaValue(prev => Math.max(0, Math.min(1, prev - 0.1)));
+        setAlphaValue(prev => Math.max(0, Math.min(1, prev - 0.05)));
       }
       prevY = currentY;
     };
 
     window.addEventListener('wheel', handleWheel);
-    window.addEventListener('touchstart', handleTouchStart);
-    window.addEventListener('touchmove', handleTouchMove);
+    window.addEventListener('touchstart', handleTouchStart, {passive: false});
+    window.addEventListener('touchmove', handleTouchMove, {passive: false});
     window.addEventListener('touchend', handleTouchEnd);
 
     return () => {
