@@ -3,11 +3,11 @@ import './App.css';
 
 function App() {
   const [alphaValue, setAlphaValue] = useState(0.2);
+  const [clickPosition, setClickPosition] = useState({ posX: 0, posY: 0 });
 
   useEffect(() => {
     let prevY;
     const handleWheel = (event) => {
-      event.preventDefault();
       setAlphaValue(prev => Math.max(0, Math.min(1, prev + (1 / 100) * Math.sign(event.deltaY))));
     };
     const handleTouchStart = (event) => {
@@ -31,11 +31,20 @@ function App() {
       }
       prevY = currentY;
     };
+    const handleClick = (event) => {
+      setClickPosition(prev => (
+        {
+          //opacity: prev.opacity === 0 ? 1 : 0, // this flips back and forth
+          posX: event.clientX - 8,
+          posY: event.clientY - 8
+        }));
+    };
 
     window.addEventListener('wheel', handleWheel);
-    window.addEventListener('touchstart', handleTouchStart, {passive: false});
-    window.addEventListener('touchmove', handleTouchMove, {passive: false});
+    window.addEventListener('touchstart', handleTouchStart, { passive: false });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
     window.addEventListener('touchend', handleTouchEnd);
+    window.addEventListener('click', handleClick);
 
     return () => {
       window.removeEventListener('wheel', handleWheel);
@@ -47,8 +56,9 @@ function App() {
 
   return (
     <div className="App" style={{ backgroundColor: 'rgba(0,0,255,' + alphaValue + ')' }}>
+      <div className='particle' style={{ opacity: 1, transform: 'translate(' + clickPosition.posX + 'px,' + clickPosition.posY + 'px)' }}></div>
       <div className='company-header'>
-        <img src='logo.svg' alt='🦊' className='company-header-logo' />
+        <img src='logo.svg' alt='🦊' className='company-header-logo' draggable='false'/>
         <div className='company-header-text'>
           <h1 style={{ margin: 'unset' }}>acutefox</h1>
           <h2 style={{ margin: 'unset', filter: 'drop-shadow(0em 0em 0.1em rgba(0,0,255,' + (1 - alphaValue) + '))' }}>custom websites & applications</h2>
