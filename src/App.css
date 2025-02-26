@@ -1,62 +1,31 @@
 * {
   box-sizing: border-box;
+  /* border: 1px red solid; */
 }
 
-h2 {
-  color: rgb(255, 255, 204);
-}
-
-.particle {
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  outline: 1px solid red;
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
-}
-
-.App {
-  height: 100vh;
-  width: 100vw;
+body {
   background-color: rgba(0, 0, 255, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
-.company-header {
+.site-header {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.company-header-logo {
-  margin-right: 1em;
-}
-
-.company-header-text {
+.company {
   display: flex;
-  flex-direction: column;
-  align-items: start;
-  width: 100%;
+  flex-direction: row;
 }
 
-@media only screen and (max-width:500px) {
-  .company-header-text {
-    width: 50%;
-    overflow-wrap: break-word;
-  }
+.company-name {
+  padding-left: 1rem;
+}
 
-  .App {
-    transition: background-color 0.1s;
-  }
+.top-navigation {
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }

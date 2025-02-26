@@ -1,0 +1,81 @@
+h2 {
+    color: rgb(255, 255, 204);
+    filter: drop-shadow(rgba(0, 0, 255, 0.8) 0em 0em 0.1em);
+  }
+
+.company-header {
+    margin-top: 4em;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+  }
+  
+  .company-header-logo {
+    margin-right: 1em;
+  }
+  
+  .company-header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    overflow-wrap: break-word;
+  }
+  
+  .contact-me {
+    margin-top: 0.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+  }
+  
+  .contact-me * {
+    transition: all 0.25s;
+  }
+  
+  .company-header a:link,
+  .company-header a:visited,
+  .company-header a:hover,
+  .company-header a:active {
+    text-decoration: none;
+  }
+  
+  a:active path {
+    stroke: rgba(255, 255, 204);
+    filter: drop-shadow(rgba(0, 0, 255, 0.8) 0em 0em 0.1em);
+  }
+  
+  .text-link {
+    font-weight: bold;
+    color: rgba(0, 0, 255, 1);
+    filter: drop-shadow(rgba(255, 255, 255, 0.8) 0px 0px 1px);
+  }
+  
+  a:active.text-link {
+    color: rgb(255, 255, 204);
+    filter: drop-shadow(rgba(0, 0, 255, 0.8) 0px 0px 1px);
+  }
+  
+  .svg-link {
+    height: 1.2em;
+  }
+  
+  svg {
+    overflow: visible;
+    height: 1.2em;
+  }
+  
+  path {
+    stroke: rgba(0, 0, 255, 1);
+    filter: drop-shadow(rgba(255, 255, 255, 0.8) 0em 0em 0.1em);
+  }
+
+  @media screen and (max-width:500px) {
+    .company-header-text {
+      width: 50%;
+    }
+  }
