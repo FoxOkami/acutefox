@@ -1,58 +1,113 @@
-import React, { useEffect, useState } from 'react';
 import './App.css';
+import './WebsiteSection.css';
+import DeviceAnimation from './DeviceAnimation';
 
 function App() {
-  const [alphaValue, setAlphaValue] = useState(0.2);
-
-  useEffect(() => {
-    let prevY;
-    const handleWheel = (event) => {
-      event.preventDefault();
-      setAlphaValue(prev => Math.max(0, Math.min(1, prev + (1 / 100) * Math.sign(event.deltaY))));
-    };
-    const handleTouchStart = (event) => {
-      event.preventDefault();
-      prevY = event.touches[0].clientY;
-    };
-    const handleTouchEnd = (event) => {
-      event.preventDefault();
-      prevY = undefined;
-    }
-    const handleTouchMove = (event) => {
-      event.preventDefault();
-      const currentY = event.touches[0].clientY;
-      const deltaY = prevY - currentY;
-
-      if (Math.abs(deltaY) > 1 && deltaY > 0) {
-        setAlphaValue(prev => Math.max(0, Math.min(1, prev + 0.05)));
-      }
-      else if (deltaY < 0) {
-        setAlphaValue(prev => Math.max(0, Math.min(1, prev - 0.05)));
-      }
-      prevY = currentY;
-    };
-
-    window.addEventListener('wheel', handleWheel);
-    window.addEventListener('touchstart', handleTouchStart, {passive: false});
-    window.addEventListener('touchmove', handleTouchMove, {passive: false});
-    window.addEventListener('touchend', handleTouchEnd);
-
-    return () => {
-      window.removeEventListener('wheel', handleWheel);
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchmove', handleTouchMove);
-      window.removeEventListener('touchend', handleTouchEnd);
-    };
-  }, []);
-
   return (
-    <div className="App" style={{ backgroundColor: 'rgba(0,0,255,' + alphaValue + ')' }}>
-      <div className='company-header'>
-        <img src='logo.svg' alt='🦊' className='company-header-logo' />
-        <div className='company-header-text'>
-          <h1 style={{ margin: 'unset' }}>acutefox</h1>
-          <h2 style={{ margin: 'unset', filter: 'drop-shadow(0em 0em 0.1em rgba(0,0,255,' + (1 - alphaValue) + '))' }}>custom websites & applications</h2>
+    <div className='App'>
+      <div className='site-header'>
+        <div className='company'>
+          <img src='logo.svg' />
+          <h1 className='company-name'>acutefox</h1>
         </div>
+        <nav className='top-navigation'>
+          <a href='#home'>Home</a>
+          <a href='#about'>About</a>
+          <a href='#services'>Services</a>
+          <a href='#contact'>Contact</a>
+        </nav>
+      </div>
+      <div id='home' className='section'>
+        <div className='section-header'>
+          <h1>Custom Software and Website Development Services</h1>
+        </div>
+        <button className='contact-me-button'>Get in touch for a personalized solution</button>
+      </div>
+      <div>
+        <img src='work_image.jpg' />
+      </div>
+      <div id='about' className='website-section'>
+        <div className='description'>
+          <h3>Unique, Elegant, Responsive</h3>
+          <p>Building and maintaining websites that work on any platform and match your needs.</p>
+          <p>Not everything fits in the prefab world, maybe you want more control or something that truly stands out.</p>
+          <p>That's where ACUTEFOX comes in.</p>
+          <p>
+            <a href='mailto:elias.ewert@gmail.com' className='text-link' target='_blank'>Reach out</a> and let's create something extraordinary!
+          </p>
+        </div>
+        <DeviceAnimation />
+      </div>
+      <div>
+        <h1>Meet the Software Engineer Behind ACUTEFOX</h1>
+        <p>With more than 10 years of experience in software development and website design, I am dedicated to creating unique and innovative solutions for my clients.</p>
+        <p>I specialize in tailoring each solution to meet client specific requirements and ensuring a seamless and efficient user experience.</p>
+        <p>Whether you are an individual looking for something to showcase your own talents, a small business aiming to improve online presence, or a large corporation in need of custom software solutions, ACUTEFOX is here to help. Contact me today to discuss how I can help out.</p>
+      </div>
+      <div>
+        <h1 id='services'>Our Services</h1>
+        <div className='card-row'>
+          <div className='card'>
+            <img src='work_image.jpg' />
+            <div className='card-text'>Custom Software</div>
+            <div className='card-description'>We design tailored software solutions that perfectly fit your unique goals.</div>
+          </div>
+          <div className='card'>
+            <img src='work_image.jpg' />
+            <div className='card-text'>Custom Software</div>
+            <div className='card-description'>We design tailored software solutions that perfectly fit your unique goals.</div>
+          </div>
+          <div className='card'>
+            <img src='work_image.jpg' />
+            <div className='card-text'>Custom Software</div>
+            <div className='card-description'>We design tailored software solutions that perfectly fit your unique goals.</div>
+          </div>
+          <div className='card'>
+            <img src='work_image.jpg' />
+            <div className='card-text'>Custom Software</div>
+            <div className='card-description'>We design tailored software solutions that perfectly fit your unique goals.</div>
+          </div>
+        </div>
+        <div className='card-row'>
+          <div className='card'>
+            <img src='work_image.jpg' />
+            <div className='card-text'>Custom Software</div>
+            <div className='card-description'>We design tailored software solutions that perfectly fit your unique goals.</div>
+          </div>
+          <div className='card'>
+            <img src='work_image.jpg' />
+            <div className='card-text'>Custom Software</div>
+            <div className='card-description'>We design tailored software solutions that perfectly fit your unique goals.</div>
+          </div>
+          <div className='card'>
+            <img src='work_image.jpg' />
+            <div className='card-text'>Custom Software</div>
+            <div className='card-description'>We design tailored software solutions that perfectly fit your unique goals.</div>
+          </div>
+          <div className='card'>
+            <img src='work_image.jpg' />
+            <div className='card-text'>Custom Software</div>
+            <div className='card-description'>We design tailored software solutions that perfectly fit your unique goals.</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src='cityscape.jpg' />
+      </div>
+      <div>
+        <h1 id='contact'>Get in Touch</h1>
+        <form>
+          <label>Name
+            <input type='text' name='name' />
+          </label>
+          <label>Email
+            <input type='text' name='email' />
+          </label>
+          <label>Message
+            <input type='textarea' />
+          </label>
+          <input type='submit' />
+        </form>
       </div>
     </div>
   );
