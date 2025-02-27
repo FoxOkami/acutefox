@@ -23,8 +23,8 @@ function App() {
         </div>
         <a href='#contact' className='contact-me-button'>Get in touch for a personalized solution</a>
       </div>
-      <div>
-        <img src='work_image.jpg' />
+      <div className='head-image-container'>
+        <img src='work_image_smaller.jpg' className='head-image' />
       </div>
       <div id='about' className='website-section'>
         <div className='description'>
