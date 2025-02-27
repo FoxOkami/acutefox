@@ -8,7 +8,7 @@
 }
 
 .description {
-    width: 28em;
+    width: 28rem;
     filter: drop-shadow(0em 0em 1px white);
 }
 
@@ -18,18 +18,24 @@
     flex-direction: column;
     align-items: center;
     /* background-image: linear-gradient(270deg, rgba(255,255,204,.2), transparent); */
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
 }
 
 .section-header {
-    width: 20%;
-    text-align: center; 
+    width: 33%;
+    text-align: center;
+    font-size: x-large;
+    line-height: 3.5rem;
 }
 
 .contact-me-button {
-    border-radius: 2em;
-    padding: 0.6em;
-    background-color: rgb(206,37,85);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    text-decoration: none;
+    border-radius: 2rem;
+    background-color: rgb(206, 37, 85);
     color: white;
     font-weight: bold;
     font-size: medium;

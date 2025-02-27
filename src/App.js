@@ -21,7 +21,7 @@ function App() {
         <div className='section-header'>
           <h1>Custom Software and Website Development Services</h1>
         </div>
-        <button className='contact-me-button'>Get in touch for a personalized solution</button>
+        <a href='#contact' className='contact-me-button'>Get in touch for a personalized solution</a>
       </div>
       <div>
         <img src='work_image.jpg' />
