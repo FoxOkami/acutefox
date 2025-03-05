@@ -26,7 +26,7 @@ function App() {
       <div className='head-image-container'>
         <img src='work_image_smaller.jpg' className='head-image' />
       </div>
-      <div id='about' className='website-section'>
+      <div className='website-section'>
         <div className='description'>
           <h3>Unique, Elegant, Responsive</h3>
           <p>Building and maintaining websites that work on any platform and match your needs.</p>
@@ -38,11 +38,13 @@ function App() {
         </div>
         <DeviceAnimation />
       </div>
-      <div>
-        <h1>Meet the Software Engineer Behind ACUTEFOX</h1>
-        <p>With more than 10 years of experience in software development and website design, I am dedicated to creating unique and innovative solutions for my clients.</p>
-        <p>I specialize in tailoring each solution to meet client specific requirements and ensuring a seamless and efficient user experience.</p>
-        <p>Whether you are an individual looking for something to showcase your own talents, a small business aiming to improve online presence, or a large corporation in need of custom software solutions, ACUTEFOX is here to help. Contact me today to discuss how I can help out.</p>
+      <div id='about' className='section-a'>
+        <div className='section-b'>
+          <h1 className='section-c'>Meet the Software Engineer Behind ACUTEFOX</h1>
+          <p>With more than 10 years of experience in software development and website design, I am dedicated to creating unique and innovative solutions for my clients.</p>
+          <p>I specialize in tailoring each solution to meet client specific requirements and ensuring a seamless and efficient user experience.</p>
+          <p>Whether you are an individual looking for something to showcase your own talents, a small business aiming to improve online presence, or a large corporation in need of custom software solutions, ACUTEFOX is here to help. Contact me today to discuss how I can help out.</p>
+        </div>
       </div>
       <div>
         <h1 id='services'>Our Services</h1>
