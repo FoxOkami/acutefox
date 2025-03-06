@@ -46,69 +46,83 @@ function App() {
           <p>Whether you are an individual looking for something to showcase your own talents, a small business aiming to improve online presence, or a large corporation in need of custom software solutions, ACUTEFOX is here to help. Contact me today to discuss how I can help out.</p>
         </div>
       </div>
-      <div>
-        <h1 id='services'>Our Services</h1>
-        <div className='card-row'>
+      <div id='services' className='section-a'>
+        <h1>Our Services</h1>
+        <div className='cards-container'>
           <div className='card'>
-            <img src='work_image.jpg' />
-            <div className='card-text'>Custom Software</div>
+            <div className='card-title'>
+              <img className='card-title-image' src='work_image.jpg' />
+              <div className='card-title-text'>Custom Software</div>
+            </div>
             <div className='card-description'>We design tailored software solutions that perfectly fit your unique goals.</div>
           </div>
           <div className='card'>
-            <img src='work_image.jpg' />
-            <div className='card-text'>Custom Software</div>
+            <div className='card-title'>
+              <img className='card-title-image' src='work_image.jpg' />
+              <div className='card-title-text'>Custom Software</div>
+            </div>
             <div className='card-description'>We design tailored software solutions that perfectly fit your unique goals.</div>
           </div>
           <div className='card'>
-            <img src='work_image.jpg' />
-            <div className='card-text'>Custom Software</div>
+            <div className='card-title'>
+              <img className='card-title-image' src='work_image.jpg' />
+              <div className='card-title-text'>Custom Software</div>
+            </div>
             <div className='card-description'>We design tailored software solutions that perfectly fit your unique goals.</div>
           </div>
           <div className='card'>
-            <img src='work_image.jpg' />
-            <div className='card-text'>Custom Software</div>
-            <div className='card-description'>We design tailored software solutions that perfectly fit your unique goals.</div>
-          </div>
-        </div>
-        <div className='card-row'>
-          <div className='card'>
-            <img src='work_image.jpg' />
-            <div className='card-text'>Custom Software</div>
+            <div className='card-title'>
+              <img className='card-title-image' src='work_image.jpg' />
+              <div className='card-title-text'>Custom Software</div>
+            </div>
             <div className='card-description'>We design tailored software solutions that perfectly fit your unique goals.</div>
           </div>
           <div className='card'>
-            <img src='work_image.jpg' />
-            <div className='card-text'>Custom Software</div>
+            <div className='card-title'>
+              <img className='card-title-image' src='work_image.jpg' />
+              <div className='card-title-text'>Custom Software</div>
+            </div>
             <div className='card-description'>We design tailored software solutions that perfectly fit your unique goals.</div>
           </div>
           <div className='card'>
-            <img src='work_image.jpg' />
-            <div className='card-text'>Custom Software</div>
+            <div className='card-title'>
+              <img className='card-title-image' src='work_image.jpg' />
+              <div className='card-title-text'>Custom Software</div>
+            </div>
             <div className='card-description'>We design tailored software solutions that perfectly fit your unique goals.</div>
           </div>
           <div className='card'>
-            <img src='work_image.jpg' />
-            <div className='card-text'>Custom Software</div>
+            <div className='card-title'>
+              <img className='card-title-image' src='work_image.jpg' />
+              <div className='card-title-text'>Custom Software</div>
+            </div>
+            <div className='card-description'>We design tailored software solutions that perfectly fit your unique goals.</div>
+          </div>
+          <div className='card'>
+            <div className='card-title'>
+              <img className='card-title-image' src='work_image.jpg' />
+              <div className='card-title-text'>Custom Software</div>
+            </div>
             <div className='card-description'>We design tailored software solutions that perfectly fit your unique goals.</div>
           </div>
         </div>
       </div>
-      <div>
-        <img src='cityscape.jpg' />
-      </div>
-      <div>
-        <h1 id='contact'>Get in Touch</h1>
-        <form>
-          <label>Name
-            <input type='text' name='name' />
+      <div className='cityscape-image'></div>
+      <div id='contact' className='section-a'>
+        <h1>Get in Touch</h1>
+        <form className='contact-form'>
+          <div className='user-information'>
+            <label className='user-name'>Name
+              <input type='text' name='name' placeholder='Bobby Joe' />
+            </label>
+            <label className='user-email'>Email
+              <input type='text' name='email' placeholder='example@domain.com' />
+            </label>
+          </div>
+          <label className='user-message'>Message
+            <textarea rows={10} placeholder='I would like a custom solution please!' />
           </label>
-          <label>Email
-            <input type='text' name='email' />
-          </label>
-          <label>Message
-            <input type='textarea' />
-          </label>
-          <input type='submit' />
+          <input type='submit' className='submit-button' />
         </form>
       </div>
     </div>

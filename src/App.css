@@ -63,3 +63,91 @@ body {
 .section-c {
   text-align: center;
 }
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.card-title {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 1rem;
+}
+
+.card-title-image {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  border-radius: inherit;
+  filter: brightness(0.5);
+}
+
+.card-title-text {
+  position: relative;
+  color: white;
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-description {
+  text-align: center;
+}
+
+.cityscape-image {
+  background-image: url('../public/cityscape.jpg');
+  width: 100%;
+  height: 25rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  filter: brightness(1.3) opacity(.33);
+  background-attachment: fixed;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  align-items: flex-end;
+}
+
+.user-information {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.user-name {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+}
+
+.user-email {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+}
+
+.user-message {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
