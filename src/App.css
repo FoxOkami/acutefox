@@ -4,14 +4,34 @@
 }
 
 body {
-  background-color: rgba(0, 0, 255, 0.2);
+  /* background-color: rgba(0, 0, 255, 0.2); */
 }
 
 .site-header {
+  height: 86px;
+  background-color: rgb(204, 204, 255);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.top-navigation>a {
+  border: 1px solid darkgray;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: black;
+}
+
+.jump-link {
+  padding-top: 86px;
+  margin-top: -86px;
+  background-clip: content-box;
 }
 
 .company {
@@ -37,12 +57,16 @@ body {
   justify-content: center;
   overflow: hidden;
   height: 33rem;
-  background-image: linear-gradient(180deg, transparent, white);
+  background-image: linear-gradient(180deg, rgb(204, 204, 255) 50%, white 50%);
 }
 
 .head-image {
   border: 0.25rem solid white;
   border-radius: 1.5rem;
+}
+
+.lightgray-background {
+  background-color: #0000000d;
 }
 
 .section-a {
@@ -120,11 +144,17 @@ body {
   background-attachment: fixed;
 }
 
+#contact {
+  padding-bottom: 3rem;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
   width: 40%;
   align-items: flex-end;
+  justify-content: space-between;
+  height: 19rem;
 }
 
 .user-information {
@@ -134,20 +164,17 @@ body {
   justify-content: space-between;
 }
 
-.user-name {
-  display: flex;
-  flex-direction: column;
+.user-information>.input {
   width: 49%;
+  border: 1px lightgray solid;
+  border-radius: 1.5rem;
+  padding: 1rem;
 }
 
-.user-email {
-  display: flex;
-  flex-direction: column;
-  width: 49%;
-}
-
-.user-message {
-  display: flex;
-  flex-direction: column;
+.contact-form>.textarea {
   width: 100%;
+  resize: none;
+  border: 1px lightgray solid;
+  border-radius: 2rem;
+  padding: 1rem;
 }
