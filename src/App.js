@@ -33,7 +33,7 @@ function App() {
           <p>Not everything fits in the prefab world, maybe you want more control or something that truly stands out.</p>
           <p>That's where ACUTEFOX comes in.</p>
           <p>
-            <a href='mailto:elias.ewert@gmail.com' className='text-link' target='_blank'>Reach out</a> and let's create something extraordinary!
+            <a href='#contact' className='text-link'>Reach out</a> and let's create something extraordinary!
           </p>
         </div>
         <DeviceAnimation />
@@ -43,7 +43,7 @@ function App() {
           <h1 className='section-c'>Meet the Software Engineer Behind ACUTEFOX</h1>
           <p>With more than 10 years of experience in software development and website design, I am dedicated to creating unique and innovative solutions for my clients.</p>
           <p>I specialize in tailoring each solution to meet client specific requirements and ensuring a seamless and efficient user experience.</p>
-          <p>Whether you are an individual looking for something to showcase your own talents, a small business aiming to improve online presence, or a large corporation in need of custom software solutions, ACUTEFOX is here to help. Contact me today to discuss how I can help out.</p>
+          <p>Whether you are an individual looking for something to showcase your own talents, a small business aiming to improve online presence, or a large corporation in need of custom software solutions, ACUTEFOX is here to help. <a href='#contact'>Contact me</a> today to discuss how I can help out.</p>
         </div>
       </div>
       <div id='services' className='section-a jump-link'>
