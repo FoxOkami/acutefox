@@ -20,7 +20,7 @@ body {
   z-index: 1;
 }
 
-.top-navigation>a {
+.top-navigation > a {
   border: 1px solid darkgray;
   border-radius: 2rem;
   padding: 0.5rem;
@@ -76,7 +76,7 @@ body {
   width: 100%;
 }
 
-.section-a>.section-b {
+.section-a > .section-b {
   width: 33%;
   display: flex;
   flex-direction: column;
@@ -134,13 +134,13 @@ body {
 }
 
 .cityscape-image {
-  background-image: url('../public/cityscape.jpg');
+  background-image: url("../public/cityscape.jpg");
   width: 100%;
   height: 25rem;
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: center;
-  filter: brightness(1.3) opacity(.33);
+  filter: brightness(1.3) opacity(0.33);
   background-attachment: fixed;
 }
 
@@ -154,7 +154,7 @@ body {
   width: 40%;
   align-items: flex-end;
   justify-content: space-between;
-  height: 19rem;
+  /* height: 19rem; */
 }
 
 .user-information {
@@ -162,19 +162,23 @@ body {
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
-.user-information>.input {
+.user-information > .input {
   width: 49%;
   border: 1px lightgray solid;
   border-radius: 1.5rem;
   padding: 1rem;
 }
 
-.contact-form>.textarea {
-  width: 100%;
+.message {
   resize: none;
-  border: 1px lightgray solid;
-  border-radius: 2rem;
+  overflow: hidden;
   padding: 1rem;
+  border-radius: 1.5rem;
+  border: 1px lightgray solid;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
 }
