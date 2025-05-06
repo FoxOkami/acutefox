@@ -152,21 +152,18 @@ body {
   display: flex;
   flex-direction: column;
   width: 40%;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
-  /* height: 19rem; */
 }
 
-.user-information {
+.input-package {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
-  justify-content: space-between;
-  margin-bottom: 1rem;
 }
 
-.user-information > .input {
-  width: 49%;
+.input {
+  width: 100%;
   border: 1px lightgray solid;
   border-radius: 1.5rem;
   padding: 1rem;
@@ -181,4 +178,19 @@ body {
   width: 100%;
   height: auto;
   margin-bottom: 1rem;
+}
+
+.error-message:has(+[aria-invalid="true"]) {
+  visibility: visible;
+  color: red;
+  height: 1.6rem;
+}
+
+[aria-invalid="true"] {
+  border: 1px solid red;
+}
+
+.error-message {
+  visibility: hidden;
+  height: 0.6rem;
 }

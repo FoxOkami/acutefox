@@ -1,17 +1,84 @@
 import React, { useState } from "react";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "./firebase";
 import "./App.css";
 import "./WebsiteSection.css";
 import DeviceAnimation from "./DeviceAnimation";
 
 function App() {
+  const [fields, setFields] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({
+    name: false,
+    email: false,
+    message: false,
+  });
+
   const textareaAutoResizer = (event) => {
     let target = event.target;
     target.style.height = "auto";
     let clientHeight = target.getBoundingClientRect().height;
     let scrollHeight = target.scrollHeight;
-    let messageHeight = Math.max(clientHeight, scrollHeight); // scrollheight doesn't include borders, this makes it so the text area doesn't shrink by the size of borders
+    // scrollheight doesn't include borders, take the bigger value so we don't have a shrinking problem on first input
+    let messageHeight = Math.max(clientHeight, scrollHeight);
     target.style.height = messageHeight + "px";
   };
+
+  function updateField(event) {
+    // onChange
+    const fieldName = event.target.name;
+    const fieldValue = event.target.value;
+    setFields({ ...fields, [fieldName]: fieldValue });
+  }
+
+  function validateField(event) {
+    // onBlur
+    const fieldName = event.target.name;
+    const fieldValue = event.target.value;
+    const valid = event.target.validity.valid;
+    setErrors({ ...errors, [fieldName]: !fieldValue || !valid });
+  }
+
+  async function deliver(event) {
+    event.preventDefault();
+    //TODO: Set up a pending for submit button so multiple clicks don't happen while processing
+    const formErrors = { ...errors };
+    const formFields = { ...fields };
+    if (Object.values(formFields).some((value) => !value === true)) {
+      //TODO: set empty fields to have error
+      let errorsObjectFromFieldsObject = Object.fromEntries(
+        Object.entries(formFields).map(function ([key, value]) {
+          return [key, !value];
+        })
+      );
+      console.log(errorsObjectFromFieldsObject);
+      setErrors({ ...formErrors, ...errorsObjectFromFieldsObject });
+      console.warn("Empty Field Values", errorsObjectFromFieldsObject);
+      return;
+    }
+    if (Object.values(formErrors).some((value) => value === true)) {
+      // there are form errors, time to bail
+      console.warn("Form Errors", formErrors);
+      return;
+    }
+    try {
+      const docRef = await addDoc(collection(db, "incoming-messages"), {
+        name: formFields.name,
+        email: formFields.email,
+        message: formFields.message,
+        createdAt: serverTimestamp(),
+      });
+      console.log("Success: document created", docRef.id);
+    } catch (e) {
+      console.error("Error adding document", e);
+    } finally {
+      //TODO: This is probably where we get the submit button back after processing
+    }
+  }
 
   return (
     <div className="App" id="home">
@@ -169,31 +236,59 @@ function App() {
       </div>
       <div id="contact" className="section-a lightgray-background">
         <h1>Get in Touch</h1>
-        <form className="contact-form">
-          <div className="user-information">
+        <form className="contact-form" onSubmit={deliver}>
+          <div className="input-package">
+            <span id="invalid-name" className="error-message">This field is required</span>
             <input
               type="text"
               name="name"
+              required
               aria-label="name"
+              aria-invalid={errors.name}
+              aria-errormessage="invalid-name"
+              aria-required
               placeholder="Name"
               className="input"
-            />
-            <input
-              type="text"
-              name="email"
-              aria-label="email"
-              placeholder="Email"
-              className="input"
+              onChange={updateField}
+              onBlur={validateField}
             />
           </div>
-          <textarea
-            id="message"
-            className="message"
-            rows={10}
-            placeholder="Message"
-            aria-label="message"
-            onChange={textareaAutoResizer}
-          />
+          <div className="input-package">
+            <span id="invalid-email" className="error-message">Please enter a valid email</span>
+            <input
+              type="email"
+              name="email"
+              required
+              aria-label="email"
+              aria-invalid={errors.email}
+              aria-errormessage="invalid-email"
+              aria-required
+              placeholder="Email"
+              className="input"
+              onChange={updateField}
+              onBlur={validateField}
+            />
+          </div>
+          <div className="input-package">
+            <span id="invalid-message" className="error-message">This field is required</span>
+            <textarea
+              id="message"
+              name="message"
+              required
+              aria-label="message"
+              aria-invalid={errors.message}
+              aria-errormessage="invalid-message"
+              aria-required
+              placeholder="Message"
+              className="message"
+              rows={10}
+              onChange={(event) => {
+                textareaAutoResizer(event);
+                updateField(event);
+              }}
+              onBlur={validateField}
+            />
+          </div>
           <input type="submit" className="contact-me-button" />
         </form>
       </div>
