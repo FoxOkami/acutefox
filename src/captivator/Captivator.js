@@ -1,10 +1,9 @@
 import DeviceAnimation from '../DeviceAnimation';
 import "./Captivator.css";
-import "../global.css"
 
 export default function Captivator() {
   return (
-    <div className="captivator-main">
+    <div className="captivator">
       <div className="captivator-container">
         <div className="captivator-header">
           <h1>Custom Software and Website Development Services</h1>

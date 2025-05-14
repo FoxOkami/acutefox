@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "./firebase";
 import "./App.css";
+import "./global.css";
 import "./WebsiteSection.css";
 import SiteHeader from "./site-header/SiteHeader";
 import Captivator from "./captivator/Captivator";
+import About from "./about/About";
 
 function App() {
   const [fields, setFields] = useState({
@@ -90,79 +92,10 @@ function App() {
 
   return (
     <div className="App" id="home-landing">
-      {/* <div className="site-header">
-        <a href="#home-landing" className="company-link">
-          <div className="company">
-            <img src="logo.svg" />
-            <h1 className="company-name">acutefox</h1>
-          </div>
-        </a>
-        <nav className="top-navigation">
-          <a href="#home-landing">Home</a>
-          <a href="#about-landing">About</a>
-          <a href="#services-landing">Services</a>
-          <a href="#contact-landing">Contact</a>
-        </nav>
-      </div> */}
       <SiteHeader />
-      {/* <div className="section">
-        <div className="section-header">
-          <h1>Custom Software and Website Development Services</h1>
-        </div>
-        <a href="#contact-landing" className="contact-me-button">
-          Get in touch for a personalized solution
-        </a>
-      </div>
-      <div className="head-image-container">
-        <img src="work_image_smaller.jpg" className="head-image" />
-      </div>
-      <div className="website-section">
-        <div className="description">
-          <h3>Unique, Elegant, Responsive</h3>
-          <p>
-            Building and maintaining software that works on any platform and
-            matches your needs.
-          </p>
-          <p>
-            Not everything fits in the prefab world, maybe you want more control
-            or something that truly stands out.
-          </p>
-          <p>That's where ACUTEFOX comes in.</p>
-          <p>
-            <a href="#contact-landing" className="text-link">
-              Reach out
-            </a>{" "}
-            and let's create something extraordinary!
-          </p>
-        </div>
-        <DeviceAnimation />
-      </div> */}
       <Captivator />
-      <div id="about-landing" className="jump-link"></div>
-      <div className="section-a lightgray-background">
-        <div className="section-b">
-          <h1 className="section-c">
-            Meet the Software Engineer Behind ACUTEFOX
-          </h1>
-          <p>
-            With more than 10 years of experience in software development and
-            website design, I am dedicated to creating unique and innovative
-            solutions for my clients.
-          </p>
-          <p>
-            I specialize in tailoring each solution to meet client specific
-            requirements and ensuring a seamless and efficient user experience.
-          </p>
-          <p>
-            Whether you are an individual looking for something to showcase your
-            own talents, a small business aiming to improve online presence, or
-            a large corporation in need of custom software solutions, ACUTEFOX
-            is here to help. <a href="#contact-landing">Contact me</a> today to
-            discuss how I can help out.
-          </p>
-        </div>
-      </div>
-      <div id="services-landing" className="jump-link"></div>
+      <About />
+      <div id="services-landing" className="global-jump-link"></div>
       <div className="section-a">
         <h1>Services</h1>
         <div className="cards-container">
@@ -248,7 +181,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div id="contact-landing" className="jump-link"></div>
+      <div id="contact-landing" className="global-jump-link"></div>
       <div className="contact section-a lightgray-background">
         <h1>Get in Touch</h1>
         <form className="contact-form" onSubmit={deliver}>

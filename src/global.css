@@ -12,3 +12,21 @@
   border: none;
   filter: drop-shadow(2px 2px 2px black);
 }
+
+.global-jump-link {
+  height: 0px;
+  width: 100%;
+  visibility: hidden;
+  z-index: -1;
+  padding-top: 86px;
+  margin-top: -86px;
+  background-clip: content-box;
+}
+
+.global-lightgray-background {
+  background-color: #0000000d;
+}
+
+.global-text-align-center {
+  text-align: center;
+}
