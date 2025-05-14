@@ -1,0 +1,14 @@
+.global-contact-me-button {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  text-decoration: none;
+  border-radius: 2rem;
+  background-color: rgb(206, 37, 85);
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+  border: none;
+  filter: drop-shadow(2px 2px 2px black);
+}

@@ -3,7 +3,8 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "./firebase";
 import "./App.css";
 import "./WebsiteSection.css";
-import DeviceAnimation from "./DeviceAnimation";
+import SiteHeader from "./site-header/SiteHeader";
+import Captivator from "./captivator/Captivator";
 
 function App() {
   const [fields, setFields] = useState({
@@ -11,12 +12,13 @@ function App() {
     email: "",
     message: "",
   });
-
   const [errors, setErrors] = useState({
     name: false,
     email: false,
     message: false,
   });
+  const [submitProcessing, setSubmitProcessing] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const textareaAutoResizer = (event) => {
     let target = event.target;
@@ -41,15 +43,15 @@ function App() {
     const fieldValue = event.target.value;
     const valid = event.target.validity.valid;
     setErrors({ ...errors, [fieldName]: !fieldValue || !valid });
+    setSubmitSuccess(false);
   }
 
   async function deliver(event) {
     event.preventDefault();
-    //TODO: Set up a pending for submit button so multiple clicks don't happen while processing
+    setSubmitProcessing(true);
     const formErrors = { ...errors };
     const formFields = { ...fields };
     if (Object.values(formFields).some((value) => !value === true)) {
-      //TODO: set empty fields to have error
       let errorsObjectFromFieldsObject = Object.fromEntries(
         Object.entries(formFields).map(function ([key, value]) {
           return [key, !value];
@@ -76,29 +78,38 @@ function App() {
     } catch (e) {
       console.error("Error adding document", e);
     } finally {
-      //TODO: This is probably where we get the submit button back after processing
+      setSubmitProcessing(false);
+      setFields({
+        name: "",
+        email: "",
+        message: "",
+      });
+      setSubmitSuccess(true);
     }
   }
 
   return (
-    <div className="App" id="home">
-      <div className="site-header">
-        <div className="company">
-          <img src="logo.svg" />
-          <h1 className="company-name">acutefox</h1>
-        </div>
+    <div className="App" id="home-landing">
+      {/* <div className="site-header">
+        <a href="#home-landing" className="company-link">
+          <div className="company">
+            <img src="logo.svg" />
+            <h1 className="company-name">acutefox</h1>
+          </div>
+        </a>
         <nav className="top-navigation">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
+          <a href="#home-landing">Home</a>
+          <a href="#about-landing">About</a>
+          <a href="#services-landing">Services</a>
+          <a href="#contact-landing">Contact</a>
         </nav>
-      </div>
-      <div className="section">
+      </div> */}
+      <SiteHeader />
+      {/* <div className="section">
         <div className="section-header">
           <h1>Custom Software and Website Development Services</h1>
         </div>
-        <a href="#contact" className="contact-me-button">
+        <a href="#contact-landing" className="contact-me-button">
           Get in touch for a personalized solution
         </a>
       </div>
@@ -118,15 +129,17 @@ function App() {
           </p>
           <p>That's where ACUTEFOX comes in.</p>
           <p>
-            <a href="#contact" className="text-link">
+            <a href="#contact-landing" className="text-link">
               Reach out
             </a>{" "}
             and let's create something extraordinary!
           </p>
         </div>
         <DeviceAnimation />
-      </div>
-      <div id="about" className="section-a lightgray-background jump-link">
+      </div> */}
+      <Captivator />
+      <div id="about-landing" className="jump-link"></div>
+      <div className="section-a lightgray-background">
         <div className="section-b">
           <h1 className="section-c">
             Meet the Software Engineer Behind ACUTEFOX
@@ -144,12 +157,13 @@ function App() {
             Whether you are an individual looking for something to showcase your
             own talents, a small business aiming to improve online presence, or
             a large corporation in need of custom software solutions, ACUTEFOX
-            is here to help. <a href="#contact">Contact me</a> today to discuss
-            how I can help out.
+            is here to help. <a href="#contact-landing">Contact me</a> today to
+            discuss how I can help out.
           </p>
         </div>
       </div>
-      <div id="services" className="section-a jump-link">
+      <div id="services-landing" className="jump-link"></div>
+      <div className="section-a">
         <h1>Services</h1>
         <div className="cards-container">
           <div className="card">
@@ -234,11 +248,14 @@ function App() {
           </div>
         </div>
       </div>
-      <div id="contact" className="section-a lightgray-background">
+      <div id="contact-landing" className="jump-link"></div>
+      <div className="contact section-a lightgray-background">
         <h1>Get in Touch</h1>
         <form className="contact-form" onSubmit={deliver}>
           <div className="input-package">
-            <span id="invalid-name" className="error-message">This field is required</span>
+            <span id="invalid-name" className="error-message">
+              This field is required
+            </span>
             <input
               type="text"
               name="name"
@@ -251,10 +268,13 @@ function App() {
               className="input"
               onChange={updateField}
               onBlur={validateField}
+              value={fields.name}
             />
           </div>
           <div className="input-package">
-            <span id="invalid-email" className="error-message">Please enter a valid email</span>
+            <span id="invalid-email" className="error-message">
+              Please enter a valid email
+            </span>
             <input
               type="email"
               name="email"
@@ -267,10 +287,13 @@ function App() {
               className="input"
               onChange={updateField}
               onBlur={validateField}
+              value={fields.email}
             />
           </div>
           <div className="input-package">
-            <span id="invalid-message" className="error-message">This field is required</span>
+            <span id="invalid-message" className="error-message">
+              This field is required
+            </span>
             <textarea
               id="message"
               name="message"
@@ -287,9 +310,24 @@ function App() {
                 updateField(event);
               }}
               onBlur={validateField}
+              value={fields.message}
             />
           </div>
-          <input type="submit" className="contact-me-button" />
+          <div className="form-submit">
+            <input
+              type="submit"
+              className="contact-me-button"
+              aria-disabled={submitProcessing}
+              disabled={submitProcessing}
+            />
+            <span
+              className={submitSuccess ? "visible" : "hidden"}
+              role="alert"
+              aria-live="polite"
+            >
+              Message sent, thank you!
+            </span>
+          </div>
         </form>
       </div>
     </div>
