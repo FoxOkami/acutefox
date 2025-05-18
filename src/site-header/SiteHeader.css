@@ -12,31 +12,44 @@
   z-index: 1;
 }
 
-.company-link {
+.site-header-company-link {
   cursor: pointer;
   text-decoration: none;
   color: black;
   transition: color 0.5s ease-in-out;
 }
 
-.company-link:hover {
+.site-header-company-link:hover {
   color: white;
   transition: color 0.5s ease-in-out;
 }
 
-.company {
+.site-header-company {
   display: flex;
   flex-direction: row;
 }
 
-.company-name {
+.site-header-company-name {
   padding-left: 1rem;
 }
 
-.top-navigation {
+.site-header-top-navigation {
   width: 25%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   font-weight: bold;
+}
+
+.site-header-top-navigation > a {
+  border: 1px solid darkgray;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: black;
+}
+
+.site-header-top-navigation > a:hover {
+  background-color: rgb(206, 37, 85);
+  color: white;
 }

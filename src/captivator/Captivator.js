@@ -1,15 +1,14 @@
 import DeviceAnimation from '../DeviceAnimation';
 import "./Captivator.css";
-import "../global.css"
 
 export default function Captivator() {
   return (
-    <div className="captivator-main">
+    <div className="captivator">
       <div className="captivator-container">
         <div className="captivator-header">
           <h1>Custom Software and Website Development Services</h1>
         </div>
-        <a href="#contact-landing" className="global-contact-me-button">
+        <a href="#contact-landing" className="global-button">
           Get in touch for a personalized solution
         </a>
       </div>
@@ -29,7 +28,7 @@ export default function Captivator() {
           </p>
           <p>That's where ACUTEFOX comes in.</p>
           <p>
-            <a href="#contact-landing" className="captivator-text-link">
+            <a href="#contact-landing" className="global-text-link">
               Reach out
             </a>{" "}
             <span>and let's create something extraordinary!</span>
