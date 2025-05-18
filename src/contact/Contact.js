@@ -54,6 +54,7 @@ export default function Contact() {
         })
       );
       setErrors({ ...formErrors, ...errorsObjectFromFieldsObject });
+      // there are empty form fields, time to bail
       return;
     }
     if (Object.values(formErrors).some((value) => value === true)) {
