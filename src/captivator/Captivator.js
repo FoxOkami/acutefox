@@ -8,7 +8,7 @@ export default function Captivator() {
         <div className="captivator-header">
           <h1>Custom Software and Website Development Services</h1>
         </div>
-        <a href="#contact-landing" className="global-contact-me-button">
+        <a href="#contact-landing" className="global-button">
           Get in touch for a personalized solution
         </a>
       </div>
@@ -28,7 +28,7 @@ export default function Captivator() {
           </p>
           <p>That's where ACUTEFOX comes in.</p>
           <p>
-            <a href="#contact-landing" className="captivator-text-link">
+            <a href="#contact-landing" className="global-text-link">
               Reach out
             </a>{" "}
             <span>and let's create something extraordinary!</span>

@@ -21,7 +21,7 @@ export default function About() {
           Whether you are an individual looking for something to showcase your
           own talents, a small business aiming to improve online presence, or a
           large corporation in need of custom software solutions, ACUTEFOX is
-          here to help. <a href="#contact-landing">Contact me</a> today to
+          here to help. <a href="#contact-landing" className="global-text-link">Contact me</a> today to
           discuss how I can help out.
         </p>
       </div>

@@ -1,0 +1,86 @@
+.contact {
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.contact-input-package {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.contact-input {
+  width: 100%;
+  border: 1px lightgray solid;
+  border-radius: 1.5rem;
+  padding: 1rem;
+}
+
+.contact-message {
+  resize: none;
+  overflow: hidden;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  border: 1px lightgray solid;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.contact-error-message:has(+ [aria-invalid="true"]) {
+  visibility: visible;
+  color: red;
+  height: auto;
+}
+
+[aria-invalid="true"] {
+  border: 1px solid red;
+}
+
+[aria-disabled="true"].global-button {
+  cursor: not-allowed;
+  filter: opacity(0.5);
+}
+
+.contact-error-message {
+  visibility: hidden;
+  height: 0px;
+}
+
+.contact-hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 2s ease-out, opacity 2s linear;
+}
+
+.contact-visible {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 1s ease-out, opacity 1s linear;
+}
+
+.contact-form
+  :not(:first-child)
+  > .contact-error-message:has(+ [aria-invalid="false"]) {
+  padding-bottom: 0.6rem;
+}
+
+.contact-form-submit {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+  justify-content: flex-start;
+  column-gap: 1.5rem;
+}

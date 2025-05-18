@@ -44,9 +44,3 @@
 .captivator-description {
   width: 25rem;
 }
-
-.captivator-text-link {
-  font-weight: bold;
-  color: rgba(0, 0, 255, 1);
-  filter: drop-shadow(rgba(255, 255, 255, 0.8) 0px 0px 1px);
-}
