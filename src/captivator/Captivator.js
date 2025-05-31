@@ -1,4 +1,4 @@
-import DeviceAnimation from '../DeviceAnimation';
+import DeviceAnimation from '../device-animation/DeviceAnimation';
 import "./Captivator.css";
 
 export default function Captivator() {
