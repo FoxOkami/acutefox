@@ -9,7 +9,7 @@
 .contact-form {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 20%;
   align-items: flex-start;
   justify-content: space-between;
 }
@@ -83,4 +83,40 @@
   flex-direction: row;
   justify-content: flex-start;
   column-gap: 1.5rem;
+}
+
+@media screen and (max-width: 1440px) {
+  .contact-form {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .contact-form {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-form {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .contact-form {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .contact-form {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .contact-form {
+    width: 99%;
+  }
 }

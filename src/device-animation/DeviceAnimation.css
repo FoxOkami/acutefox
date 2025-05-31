@@ -157,11 +157,8 @@
     background-color: plum;
 }
 
-/* @media (height <=645px),
-(width <=48em) {
+@media screen and (max-width: 1023px) {
     .device-container {
-        height: 0px;
-        width: 0px;
-        transition: height 1s, width 2s;
+        display: none;
     }
-} */
+}
