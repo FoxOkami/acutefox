@@ -26,8 +26,7 @@ export default function Captivator() {
             Not everything fits in the prefab world, maybe you want more control
             or something that truly stands out.
           </p>
-          <p>That's where ACUTEFOX comes in.</p>
-          <p>
+          <p>That's where ACUTEFOX comes in.{" "}
             <a href="#contact-landing" className="global-text-link">
               Reach out
             </a>{" "}
