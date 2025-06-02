@@ -6,7 +6,7 @@ export default function Captivator() {
     <div className="captivator">
       <div className="captivator-container">
         <div className="captivator-header">
-          <h1>Custom Software and Website Development Services</h1>
+          <h2>Custom Software and Website Development Services</h2>
         </div>
         <a href="#contact-landing" className="global-button">
           Get in touch for a personalized solution
