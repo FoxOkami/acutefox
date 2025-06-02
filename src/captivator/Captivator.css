@@ -18,17 +18,28 @@
   line-height: 3.5rem;
 }
 
+.captivator-header > h2 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+
 .captivator-image-container {
   display: flex;
   width: 100%;
   flex-direction: row;
   justify-content: center;
   overflow: hidden;
-  height: 33rem;
+  height: auto;
   background-image: linear-gradient(180deg, rgb(204, 204, 255) 50%, white 50%);
 }
 
 .captivator-head-image {
+  max-width: 98vw;
+  max-height: fit-content;
   border: 0.25rem solid white;
   border-radius: 1.5rem;
 }
@@ -43,4 +54,77 @@
 
 .captivator-description {
   width: 25rem;
+}
+
+@media screen and (max-width: 1435px) {
+  .captivator-header {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .captivator-description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+  }
+
+  .captivator-description > h3 {
+    text-align: center;
+    margin-bottom: unset;
+  }
+
+  .captivator-description > p {
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: unset;
+  }
+}
+
+@media screen and (max-width: 1004px) {
+  .captivator-header {
+    line-height: normal;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 689px) {
+  .captivator-header {
+    text-align: center;
+    font-size: large;
+    line-height: normal;
+  }
+}
+
+@media screen and (max-width: 517px) {
+  .captivator-header {
+    font-size: initial;
+  }
+}
+
+@media screen and (max-width: 459px) {
+  .captivator-header > h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 413px) {
+  .captivator-header > h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 367px) {
+  .captivator-header > h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .captivator-header > h2 {
+    font-size: 1.3rem;
+  }
 }

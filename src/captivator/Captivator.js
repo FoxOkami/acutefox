@@ -6,7 +6,7 @@ export default function Captivator() {
     <div className="captivator">
       <div className="captivator-container">
         <div className="captivator-header">
-          <h1>Custom Software and Website Development Services</h1>
+          <h2>Custom Software and Website Development Services</h2>
         </div>
         <a href="#contact-landing" className="global-button">
           Get in touch for a personalized solution
@@ -26,8 +26,7 @@ export default function Captivator() {
             Not everything fits in the prefab world, maybe you want more control
             or something that truly stands out.
           </p>
-          <p>That's where ACUTEFOX comes in.</p>
-          <p>
+          <p>That's where ACUTEFOX comes in.{" "}
             <a href="#contact-landing" className="global-text-link">
               Reach out
             </a>{" "}

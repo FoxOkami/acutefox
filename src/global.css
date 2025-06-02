@@ -39,3 +39,9 @@ h1 + p {
   font-weight: bold;
   color: rgba(0, 0, 255, 1);
 }
+
+@media screen and (max-width: 342px) {
+  .global-button {
+    font-size: small;
+  }
+}
