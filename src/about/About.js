@@ -5,9 +5,9 @@ export default function About() {
     <div className="about global-lightgray-background">
       <div id="about-landing" className="global-jump-link"></div>
       <div className="about-container">
-        <h1 className="global-text-align-center">
+        <h2 className="about-header global-text-align-center">
           Meet the Software Engineer Behind ACUTEFOX
-        </h1>
+        </h2>
         <p>
           With more than 10 years of experience in software development and
           website design, I am dedicated to creating unique and innovative
@@ -21,8 +21,11 @@ export default function About() {
           Whether you are an individual looking for something to showcase your
           own talents, a small business aiming to improve online presence, or a
           large corporation in need of custom software solutions, ACUTEFOX is
-          here to help. <a href="#contact-landing" className="global-text-link">Contact me</a> today to
-          discuss how I can help out.
+          here to help.{" "}
+          <a href="#contact-landing" className="global-text-link">
+            Contact me
+          </a>{" "}
+          today to discuss how I can help out.
         </p>
       </div>
     </div>

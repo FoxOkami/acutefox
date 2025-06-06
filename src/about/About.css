@@ -3,12 +3,54 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  padding-bottom: 2rem;
 }
 
 .about-container {
-  width: 50%;
+  width: 53rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 1rem;
+  align-items: center;
+}
+
+.about-container p {
+  margin-bottom: unset;
+}
+
+.about-header {
+  width: 50%;
+  margin-bottom: unset;
+}
+
+@media screen and (max-width: 1023px) {
+  .about-container {
+    width: 60%;
+  }
+
+  .about-header {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 857px) {
+  .about-container {
+    width: 70%;
+  }
+
+  .about-header {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 689px) {
+  .about-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 517px) {
+  .about-container {
+    width: 90%;
+  }
 }

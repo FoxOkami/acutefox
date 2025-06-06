@@ -49,7 +49,6 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
 }
 
 .captivator-description {
@@ -64,7 +63,7 @@
 
 @media screen and (max-width: 1023px) {
   .captivator-description {
-    width: 100%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,9 +76,6 @@
   }
 
   .captivator-description > p {
-    text-align: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
     margin-bottom: unset;
   }
 }
@@ -91,17 +87,31 @@
   }
 }
 
+@media screen and (max-width: 857px) {
+  .captivator-description {
+    width: 70%;
+  }
+}
+
 @media screen and (max-width: 689px) {
   .captivator-header {
     text-align: center;
     font-size: large;
     line-height: normal;
   }
+
+  .captivator-description {
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 517px) {
   .captivator-header {
     font-size: initial;
+  }
+
+  .captivator-description {
+    width: 90%;
   }
 }
 
